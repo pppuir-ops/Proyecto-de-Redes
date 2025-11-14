@@ -1,0 +1,300 @@
+1. TODAS las palabras reservadas (keywords) de Python
+Estas son EXACTAMENTE todas las keywords de Python 3.12 (las más recientes).
+False
+None
+True
+and
+as
+assert
+async
+await
+break
+class
+continue
+def
+del
+elif
+else
+except
+finally
+for
+from
+global
+if
+import
+in
+is
+lambda
+nonlocal
+not
+or
+pass
+raise
+return
+try
+while
+with
+yield
+match
+case
+Explicación breve:
+control de flujo: if, else, elif, for, while, break, continue
+excepciones: try, except, finally, raise
+definiciones: class, def, lambda
+modularidad: import, from, as
+contexto/manejo: with, yield, async, await
+comparación lógica: and, or, not, in, is
+otros usos especiales: global, nonlocal, pass, match, case
+2. TODAS las funciones internas (built-ins) de Python
+Estas son TODAS las funciones internas oficialmente documentadas:
+abs
+aiter
+all
+anext
+any
+ascii
+bin
+bool
+breakpoint
+bytearray
+bytes
+callable
+chr
+classmethod
+compile
+complex
+delattr
+dict
+dir
+divmod
+enumerate
+eval
+exec
+filter
+float
+format
+frozenset
+getattr
+globals
+hasattr
+hash
+help
+hex
+id
+input
+int
+isinstance
+issubclass
+iter
+len
+list
+locals
+map
+max
+memoryview
+min
+next
+object
+oct
+open
+ord
+pow
+print
+property
+range
+repr
+reversed
+round
+set
+setattr
+slice
+sorted
+staticmethod
+str
+sum
+super
+tuple
+type
+vars
+zip
+3. Estructuras principales de Python
+Tipos de datos
+int
+float
+str
+bool
+list
+tuple
+set
+dict
+NoneType
+Operadores
+Aritméticos: + - * / % // **
+Comparación: == != > < >= <=
+Lógicos: and or not
+Asignación: = += -= *= /= %=
+Pertenencia: in, not in
+Identidad: is, is not
+4. TODAS las etiquetas HTML5 oficiales
+Aquí están TODAS las etiquetas HTML reconocidas por HTML5:
+<!DOCTYPE>
+<a>
+<abbr>
+<address>
+<area>
+<article>
+<aside>
+<audio>
+<b>
+<base>
+<bdi>
+<bdo>
+<blockquote>
+<body>
+<br>
+<button>
+<canvas>
+<caption>
+<cite>
+<code>
+<col>
+<colgroup>
+<data>
+<datalist>
+<dd>
+<del>
+<details>
+<dfn>
+<dialog>
+<div>
+<dl>
+<dt>
+<em>
+<embed>
+<fieldset>
+<figcaption>
+<figure>
+<footer>
+<form>
+<h1> ... <h6>
+<head>
+<header>
+<hr>
+<html>
+<i>
+<iframe>
+<img>
+<input>
+<ins>
+<kbd>
+<label>
+<legend>
+<li>
+<link>
+<main>
+<map>
+<mark>
+<meta>
+<meter>
+<nav>
+<noscript>
+<object>
+<ol>
+<optgroup>
+<option>
+<output>
+<p>
+<picture>
+<pre>
+<progress>
+<q>
+<rp>
+<rt>
+<ruby>
+<s>
+<samp>
+<script>
+<section>
+<select>
+<small>
+<source>
+<span>
+<strong>
+<style>
+<sub>
+<summary>
+<sup>
+<table>
+<tbody>
+<td>
+<template>
+<textarea>
+<tfoot>
+<th>
+<thead>
+<time>
+<title>
+<tr>
+<track>
+<u>
+<ul>
+<var>
+<video>
+<wbr>
+Esta es la lista completa.
+5. Atributos Globales del HTML5 (válidos para casi todas las etiquetas)
+accesskey
+autocapitalize
+class
+contenteditable
+data-*
+dir
+draggable
+enterkeyhint
+hidden
+id
+inputmode
+is
+lang
+nonce
+part
+slot
+spellcheck
+style
+tabindex
+title
+translate
+6. Atributos más importantes por tipo
+Ejemplo:
+Imagen <img>
+src
+alt
+width
+height
+loading
+srcset
+sizes
+Enlaces <a>
+href
+target
+download
+rel
+type
+Input <input>
+type
+value
+placeholder
+name
+id
+required
+disabled
+checked
+min
+max
+step
+pattern
+7. Explicación del funcionamiento de HTML
+HTML = estructura
+CSS = diseño
+JS = lógica
+El navegador interpreta etiquetas como nodos del DOM.
