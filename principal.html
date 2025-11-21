@@ -3,9 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>principal</title>
+    <title>Registros</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(to bottom, white, grey);
+            font-family: Arial;
+        }
+
+        .link-cuadro {
+            display: inline-block;
+            padding: 10px 10px;       
+            border: 2px solid black;
+            margin-right: 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .link-cuadro:hover {
+            background: red;
+            color: white;
+        }
+
+        .contenedor {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .tabla-principal {
+            width: 400px;
+            table-layout: fixed;
+            cursor: pointer;
+        }
+
+        .tabla-detalle {
+            max-height: 450px;
+            overflow-y: auto;
+            display: block;
+            min-width: 350px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 2px solid black;
+            text-align: left;
+        }
+
+        th {
+            background: #ddd;
+        }
+
+        /* Fila seleccionada */
+        .fila-seleccionada {
+            background: #3b82f6 !important;
+            color: white;
+            font-weight: bold;
+        }
+
+        .crud-buttons button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-weight: bold;
+            border: 2px solid black;
+            background: white;
+            cursor: pointer;
+        }
+        .crud-buttons button:hover {
+            background: black;
+            color: white;
+        }
+    </style>
+
 </head>
 <body>
-    
+
+<br>
+
+<a class="link-cuadro" href="sesion.html">Inicio de sesion</a>
+<a class="link-cuadro" href="registro.html">Registrar datos</a>
+
+<hr><br>
+
+<!-- CONTENEDOR -->
+<div class="contenedor">
+
+    <!-- TABLA PRINCIPAL -->
+    <table id="tablaPrincipal" class="tabla-principal">
+        <tr>
+            <th>IP</th>
+            <th>Nombre usuario</th>
+            <th>Nombre del dispositivo</th> 
+        </tr>
+        <tr>
+            <td>{{IP}}</td>
+            <td>{{User}}</td>
+            <td>{{dispositivo}}</td>
+        </tr>
+    </table>
+
+    <!-- TABLA DE DETALLES -->
+    <table class="tabla-detalle">
+        <tr><th colspan="2">Detalles del dispositivo / IP</th></tr>
+
+        <tr><th>IP</th><td>{{query}}</td></tr>
+        <tr><th>Estatus</th><td>{{status}}</td></tr>
+        <tr><th>Continente</th><td>{{continent}} ({{continentCode}})</td></tr>
+        <tr><th>País</th><td>{{country}} ({{countryCode}})</td></tr>
+        <tr><th>Región</th><td>{{regionName}} ({{region}})</td></tr>
+        <tr><th>Ciudad</th><td>{{city}}</td></tr>
+        <tr><th>Código Postal</th><td>{{zip}}</td></tr>
+        <tr><th>Latitud</th><td>{{lat}}</td></tr>
+        <tr><th>Longitud</th><td>{{lon}}</td></tr>
+        <tr><th>Zona horaria</th><td>{{timezone}}</td></tr>
+        <tr><th>Moneda</th><td>{{currency}}</td></tr>
+        <tr><th>ISP</th><td>{{isp}}</td></tr>
+        <tr><th>Organización</th><td>{{org}}</td></tr>
+        <tr><th>AS</th><td>{{as}}</td></tr>
+        <tr><th>Nombre AS</th><td>{{asname}}</td></tr>
+        <tr><th>Es móvil</th><td>{{mobile}}</td></tr>
+        <tr><th>Es proxy</th><td>{{proxy}}</td></tr>
+        <tr><th>Es hosting</th><td>{{hosting}}</td></tr>
+    </table>
+
+</div>
+
+<br>
+
+<!-- CRUD -->
+<div class="crud-buttons" style="text-align: center;">
+    <button onclick="crudAction('create')">Crear</button>
+    <button onclick="crudAction('read')">Leer</button>
+    <button onclick="crudAction('update')">Actualizar</button>
+    <button onclick="crudAction('delete')">Eliminar</button>
+</div>
+
+<script>
+let selectedIP = null;
+
+// Seleccionar filas
+document.querySelectorAll("#tablaPrincipal tr").forEach((fila, index) => {
+    if (index === 0) return; // saltar encabezado
+
+    fila.addEventListener("click", function() {
+
+        // quitar selección previa
+        document.querySelectorAll("#tablaPrincipal tr")
+            .forEach(f => f.classList.remove("fila-seleccionada"));
+
+        // seleccionar esta fila
+        fila.classList.add("fila-seleccionada");
+
+        // obtener la IP de la primera celda
+        selectedIP = fila.cells[0].innerText;
+        console.log("Fila seleccionada IP:", selectedIP);
+    });
+});
+
+// CRUD con IP seleccionada
+function crudAction(action) {
+    if (!selectedIP) {
+        alert("Selecciona una fila primero.");
+        return;
+    }
+    window.location.href = `/${action}?ip=${selectedIP}`;
+}
+</script>
+
 </body>
 </html>

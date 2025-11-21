@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Registrar</title>
+        <style>
+        html, body{
+            height: 100%;
+            margin:0%;
+            background: linear-gradient(to bottom, green, grey);}
+    </style>
 </head>
-<body>
+<body>    
+    <style>
+    .color {
+        background-color: wheat;
+        color: black;
+    }
+    .cuadro{
+        display: inline-block;
+        padding: 10px 20px;
+        border: 2px solid black;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .cuadro:hover{
+        background: blue;
+        color: white;
+    }
+</style>
     <div style="text-align: center;">
-        <input type="text" placeholder="Nombre del equipo"><br><br>
-        <input type="text" placeholder="Tipo de dispositivo"><br><br>
-        <input type="text" placeholder="Marca"><br><br>
-        <input type="text" placeholder="Modelo"><br><br>
-        <input type="text" placeholder="Numero de serie"><br><br>
-        <input type="text" placeholder="Area responsable"><br><br>
-    <a href="principal.html">Registro</a>
+        <br><input type="text" class="color" placeholder="Nombre del equipo" style="width:400px;"><br><br><hr><br>
+        <input type="text" class="color" placeholder="Nombre del usuario" style="width:400px;"><br><br><hr><br>
+        <input type="text" class="color" placeholder="IP publica del dispositivo" style="width:400px;"><br><br><hr><br>
+    <a class="cuadro" href="principal.html">Registro</a>
     </div>
 </body>
 </html>
